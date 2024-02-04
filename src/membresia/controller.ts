@@ -1,4 +1,4 @@
-import { Membresia } from "./model"
+import { DuracionEnum, Membresia } from "./model"
 
 // Función para dar de alta una membresía
 async function createMembresia(nombre: string, precio: number, descripcion: string, activa: boolean) {
@@ -42,11 +42,15 @@ async function getAllMembresias() {
 }
 
 async function getMembresiaById(_id: string) {
-	const membresia = await Membresia.findById(_id)
+	const membresia = await Membresia.findById(_id);
 	if (!membresia) {
 		throw new Error("La membresía no existe")
 	}
 	return membresia
 }
 
-export default { createMembresia, setActiveFalseMembresia, getAllMembresias, getMembresiaById }
+async function getAllDuracionMembresias(){
+	return Object.values(DuracionEnum);
+}
+
+export default { createMembresia, setActiveFalseMembresia, getAllMembresias, getMembresiaById, getAllDuracionMembresias }

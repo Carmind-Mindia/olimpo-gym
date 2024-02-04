@@ -34,4 +34,9 @@ export function routeMembresia(app: Elysia){
             id: Type.String()
         })
     });
+
+    // GET /membresia/duracion
+    app.get("/membresia/duracion", async ({set}) => {
+        return await controller.getAllDuracionMembresias()
+    });
 }

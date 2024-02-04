@@ -5,7 +5,7 @@ export enum DuracionEnum {
 	"1 semana",
 	"2 semanas",
 	"3 semanas",
-	"1 mes",
+	"1 mes"
 }
 
 //-------------------------------------------------------------------------

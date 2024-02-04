@@ -50,7 +50,8 @@ async function getMembresiaById(_id: string) {
 }
 
 async function getAllDuracionMembresias(){
-	return Object.values(DuracionEnum);
+	const values = Object.keys(DuracionEnum).filter((v) => isNaN(Number(v)));
+	return values
 }
 
 export default { createMembresia, setActiveFalseMembresia, getAllMembresias, getMembresiaById, getAllDuracionMembresias }

@@ -2,7 +2,6 @@ import { DuracionEnum, Membresia } from "./model"
 
 // Función para dar de alta una membresía
 async function createMembresia(nombre: string, precio: number, plan_duracion: string, descripcion: string, activa: boolean) {
-	console.log("Entro al controller: ", nombre, precio, plan_duracion, descripcion, activa)
 
     // Crear un nuevo documento de membresía
 	const membresia = new Membresia({
@@ -15,8 +14,6 @@ async function createMembresia(nombre: string, precio: number, plan_duracion: st
 
 	// Guardar el documento en la base de datos
 	await membresia.save()
-
-	console.log("Membresía creada: ", membresia)
 	return membresia
 }
 

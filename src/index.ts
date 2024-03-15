@@ -8,12 +8,6 @@ import "./mongodb/connection";
 const app = new Elysia()
     .get("/ping", () => "pong");
 
-app.onError(({code, error, set}) => {
-  set.status = 500;
-  error = error || "Internal Server Error";
-  console.error(`Error ${code}: ${error}`);
-})
-
 routeMembresia(app);
 routeSubscriptor(app);
 

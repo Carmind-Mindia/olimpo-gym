@@ -16,8 +16,8 @@ export function routeMembresia(app: Elysia){
     //     "activa": true
     // }
     app.post("/membresia", async ({body}) => {
-        await controller.createMembresia(body.nombre, body.precio, body.plan_duracion, body.descripcion, body.activa ?? true)
-        return "ok"
+        console.log("Entro al router: " , body);
+        return await controller.createMembresia(body.nombre, body.precio, body.plan_duracion, body.descripcion, body.activa ?? true)
     },{
         body: Type.Object({
             nombre: Type.String(),

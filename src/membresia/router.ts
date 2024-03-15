@@ -16,7 +16,8 @@ export function routeMembresia(app: Elysia){
     //     "activa": true
     // }
     app.post("/membresia", async ({body}) => {
-        return await controller.createMembresia(body.nombre, body.precio, body.plan_duracion, body.descripcion, body.activa ?? true)
+        await controller.createMembresia(body.nombre, body.precio, body.plan_duracion, body.descripcion, body.activa ?? true)
+        return "ok"
     },{
         body: Type.Object({
             nombre: Type.String(),
